@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Roboto Mono", monospace;
 }
 
 .header {
@@ -15,6 +16,8 @@
 .header__head {
   color: #dbdbdb;
   font-size: 2em;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
 }
 .header__head-dev {
   color: #EB0296;
@@ -41,7 +44,8 @@
   line-height: 2.5em;
 }
 .main__upper-head {
-  font-size: 2em;
+  font-family: "Space Mono", monospace;
+  font-size: 1.7em;
   text-transform: capitalize;
 }
 .main__upper-msg {
