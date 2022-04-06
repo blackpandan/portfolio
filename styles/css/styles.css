@@ -15,7 +15,7 @@
 }
 .header__head {
   color: #dbdbdb;
-  font-size: 2em;
+  font-size: calc(2em + 0.5vmin);
   font-family: "Space Mono", monospace;
   font-weight: 700;
 }
