@@ -6,4 +6,13 @@
             display: none;
         }
     }
+
+    .about{
+        &__contentBox{
+            // color: blue;
+            width: 90vmin;
+            // display: none;
+            // width: 10vmin;
+        }
+    }
 }

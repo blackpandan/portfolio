@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles/css/main.css">
     <title>Dev.Fate</title>
-    <!-- <script src="https://kit.fontawesome.com/4c4a079b95.js" crossorigin="anonymous"></script> -->
+    <script src="https://kit.fontawesome.com/4c4a079b95.js" crossorigin="anonymous"></script>
     	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/gsap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/ScrollTrigger.min.js"></script>
     <!-- SEO META TAGS -->
@@ -63,7 +63,7 @@
         </nav>
     </header>
     <div class="main">
-        <section class="home child" id="home">
+        <section class="home" id="home">
             <div class="me" id="me">
                 <!-- <object class="me__pic" data="assets/me.svg" type="image/svg+xml"></object> -->
                 <svg class="me__pic" width="367" height="405" viewBox="0 0 367 405" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -121,18 +121,30 @@
             <p class="scroll" id="scroll"><span class="scrollSpan">&lt;p&gt;</span>SCROLL DOWN<span class="scrollSpan">&lt;p&gt;</span></p>
             <div class="deco"></div>
         </section>
-        <section class="about child" id="about">
-            <h2 class="about__header" id="aboutHeader"><span class="about__headerP">02.</span>About</h2>
+        <section class="about" id="about">
+            <h2 class="about__header headerText" id="aboutHeader"><span class="headerText__order">02.</span>About</h2>
             <div class="about__contentBox" id="contentBox">
                <p>James Faith is a web developer who started off creating websites as a passion, then groomed the skills into creating user-tailored sites. I use HTML, CSS, Javascript, and Python (DJango) to achieve this goal. I currently work remotely as a freelancer and I’m open to new opportunities.</p>
                 <div class="lights">
-                    <p></p>
-                    <p></p>
-                    <p></p>
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
             </div>
+
         </section>
-        <section class="skills" id="skills"></section>
+        <section class="skills" id="skills">
+            <h3 class="skills__header headerText"><span class="headerText__order">02.1 </span>Skills</h3>
+                <ul class="skills__list">
+                    <li class="skills__list-item"><i class="fa-brands fa-js-square logoImage"></i><span class="logoImage__text">Javascript (ES6+)</span></li>
+                    <li class="skills__list-item"><i class="fa-brands fa-vuejs logoImage"></i><span class="logoImage__text">Vue.js</span></li>
+                    <li class="skills__list-item"><img src="assets/pics/logos/nuxt.svg" class="logoImage__nuxt"></img><span class="logoImage__text">Nuxt.js</span></li>
+                    <li class="skills__list-item"><i class="fa-brands fa-python logoImage"></i><span class="logoImage__text">Python</span></li>
+                    <li class="skills__list-item"><img src="assets/pics/logos/django_single.svg" class="logoImage__django"></img><span class="logoImage__text">Django</span></li>
+                    <li class="skills__list-item"><i class="fa-brands fa-docker logoImage"></i><span class="logoImage__text">Docker</span></li>
+                    <li class="skills__list-item"><i class="fa-brands fa-wordpress logoImage"></i><span class="logoImage__text">Wordpress</span></li>
+                </ul>
+        </section>
     </div>
 
 <script src="scripts/main.js" type="text/Javascript"></script>
