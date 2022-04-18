@@ -7,12 +7,33 @@
         }
     }
 
+    .home{
+        .scroll{
+            display: none;
+        }
+    }
+
     .about{
         &__contentBox{
             // color: blue;
             width: 90vmin;
             // display: none;
             // width: 10vmin;
+        }
+    }
+
+    .works{
+        .slideWorks{
+            .slideCard{
+                width: 80vmin;
+            }
+        }
+    }
+
+
+    .contact{
+        &__form{
+            width: 55vmin;
         }
     }
 }

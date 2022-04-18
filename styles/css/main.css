@@ -9,6 +9,7 @@ body {
   width: min(100%, 100vw);
   height: 100vh;
   overflow-x: hidden;
+  background-color: #311847;
 }
 
 li {
@@ -23,16 +24,20 @@ a {
 .main {
   width: 100vw;
   height: 100%;
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y proximity;
   overflow-x: hidden;
-  margin-left: calc(100% - 100vw);
 }
 .main::-webkit-scrollbar {
-  display: none;
+  background: #311847;
+}
+.main::-webkit-scrollbar-thumb {
+  background: #EB0296;
+  border-radius: 1em;
 }
 .main section {
   position: relative;
-  width: 100%;
+  width: 100vw;
+  padding-right: calc(100vw - 100%);
   min-height: 100vh;
   scroll-snap-align: start;
 }
@@ -82,6 +87,34 @@ a {
 }
 .head .nav--link {
   font-weight: 600;
+}
+
+.headerText {
+  color: #f7f4f3;
+  text-transform: uppercase;
+  font-family: "Space Mono", monospace;
+  font-size: calc(1em + 1.5vmin);
+}
+.headerText__order {
+  color: #EB0296;
+}
+
+.lights {
+  display: flex;
+  position: absolute;
+  top: -2.5vh;
+  transform: translateY(-50%);
+  z-index: 8;
+  gap: 1vmin;
+}
+.lights span {
+  width: 2vmin;
+  height: 2vmin;
+  border-radius: 50%;
+  background-color: #311847;
+}
+.lights span:nth-of-type(2) {
+  background-color: #EB0296;
 }
 
 .home {
@@ -172,23 +205,13 @@ a {
   writing-mode: vertical-lr;
   position: fixed;
   z-index: 4;
-  right: 5vmin;
+  right: 2.1vmin;
   bottom: 1em;
 }
 .home .scrollSpan {
   font-weight: 100;
   font-size: 0.8em;
   padding: 0.5em 0 0.5em 0;
-}
-
-.headerText {
-  color: #f7f4f3;
-  text-transform: uppercase;
-  font-family: "Space Mono", monospace;
-  font-size: calc(1em + 1.5vmin);
-}
-.headerText__order {
-  color: #EB0296;
 }
 
 .about {
@@ -228,26 +251,9 @@ a {
   border-top-left-radius: 23px;
   border-top-right-radius: 23px;
 }
-.about__contentBox .lights {
-  display: flex;
-  position: absolute;
-  top: -2.5vh;
-  transform: translateY(-50%);
-  z-index: 8;
-  gap: 1vmin;
-}
-.about__contentBox .lights span {
-  width: 2vmin;
-  height: 2vmin;
-  border-radius: 50%;
-  background-color: #311847;
-}
-.about__contentBox .lights span:nth-of-type(2) {
-  background-color: #EB0296;
-}
 
 .skills {
-  margin: 0 0 0 0;
+  margin: 0 0 20vmin 0;
   padding: 10vmin 5vmin 0 5vmin;
   background-color: #311847;
   display: flex;
@@ -293,6 +299,156 @@ a {
   color: #EB0296;
 }
 
+.works {
+  padding: 10vmin 0 10vmin calc(100vw - 100%);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.works__header {
+  padding: 4vmin 0 8vmin 0;
+}
+.works .workCard {
+  position: relative;
+  width: 95%;
+  height: 60vmin;
+}
+.works .workCard__image {
+  object-fit: cover;
+  height: 60vmin;
+  max-width: 100%;
+}
+.works .workCard__Text {
+  position: absolute;
+  right: 0%;
+  top: 0;
+  width: 40%;
+  transform: translateX(0%);
+  color: #f7f4f3;
+}
+.works .workCard__Text-header {
+  font-size: calc(1.5em + 1vmin);
+  padding: 0 0 1em 0;
+  text-align: right;
+  text-transform: uppercase;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+}
+.works .workCard__Text-description {
+  background-color: #4e2674;
+  padding: 2vmin;
+  text-align: right;
+  box-shadow: 3px 30px 17px -25px #191515;
+  line-height: calc(1em + 1.5vmin);
+}
+.works .workCard__Text-stack {
+  font-weight: 100;
+  text-align: right;
+  padding: 1em 0 1em 0;
+}
+.works .slideWorks {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 10vmin 5vmin;
+  width: 100%;
+  margin: 0vmin 0 0 0;
+}
+.works .slideWorks__title {
+  margin: 30vmin 0 15vmin 0;
+  color: #f7f4f3;
+  font-size: calc(1em + 0.8vmin);
+}
+.works .slideWorks .slideCard {
+  position: relative;
+  background: #f7f4f3;
+  width: 45vmin;
+  height: calc(45vmin + 1em);
+  padding: 0 1em 1em 1em;
+  border-top: 1px solid #311847;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.works .slideWorks .slideCard::after {
+  content: "";
+  position: absolute;
+  top: -5vh;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5vh;
+  transform: translateY(-2px);
+  background: #f7f4f3;
+}
+.works .slideWorks .slideCard__topLinks {
+  font-size: calc(0.8em + 1vmin);
+  position: absolute;
+  top: -2.5vh;
+  right: 1em;
+  z-index: 2;
+  transform: translateY(-50%);
+}
+.works .slideWorks .slideCard__top-title {
+  font-family: "Space Mono", monospace;
+  font-size: calc(1.2em + 0.5vmin);
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0.5em 0 0.5em 0;
+}
+.works .slideWorks .slideCard__lang {
+  font-weight: 100;
+  font-size: 1em;
+}
+
+.contact {
+  padding: 10vmin 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.contact__top {
+  padding: 8vmin 0 6vmin 0;
+  color: #f7f4f3;
+  text-align: center;
+  line-height: 2.4em;
+}
+.contact__top-msg {
+  font-size: calc(1.2em + 1vmin);
+  font-weight: 700;
+}
+.contact__top-subMsg {
+  font-size: calc(1em + 0.5vmin);
+  font-weight: 200;
+}
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5vmin;
+  width: 40vmin;
+}
+.contact__form .input {
+  padding: 0.5em 0 0.5em 1.5em;
+  font-size: calc(0.8em + 0.7vmin);
+  background: none;
+  border: 1px solid #EB0296;
+  color: #f7f4f3;
+  resize: none;
+}
+.contact__form .input--submit {
+  background-color: #EB0296;
+  padding: 0.5em 0 0.5em 0;
+}
+.contact__form .input::placeholder {
+  color: #EB0296;
+}
+.contact__form .input:focus {
+  outline-color: #EB0296;
+  border: 1px solid #EB0296;
+}
+
 @media only screen and (max-width: 786px) {
   .head {
     display: none;
@@ -301,7 +457,19 @@ a {
     display: none;
   }
 
+  .home .scroll {
+    display: none;
+  }
+
   .about__contentBox {
     width: 90vmin;
+  }
+
+  .works .slideWorks .slideCard {
+    width: 80vmin;
+  }
+
+  .contact__form {
+    width: 55vmin;
   }
 }
