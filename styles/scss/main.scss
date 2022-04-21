@@ -7,7 +7,23 @@
     font-family: 'Roboto Mono', monospace;
 }
 
+.button{
+    width: fit-content;
+    padding: 0.5em 6vmin 0.5em 6vmin;
+    border-radius: 1em;
+    border: none;
+    background: $primary;
+    color: $text;
+    font-size: calc(0.6em + 1vmin);
 
+    &:hover{
+        background: $text;
+        // // outline: 1px solid $text;
+        color: $primary;
+        // box-shadow: 1px 10px 30px -10px rgb(0, 0, 0);
+    }
+   
+}
 
 body {
     width: min(100%, 100vw);
@@ -78,7 +94,8 @@ a {
     width: min(100%, 100vw);
     padding: 1em 5vmin 1em 5vmin;
     color: $secondary;
-    background: linear-gradient(90deg, $text 50%, $secondary 50%);
+    // background: linear-gradient(90deg, $text 50%, $secondary 50%);
+    // background: 
     z-index: 99;
 
     .nav {
@@ -90,6 +107,7 @@ a {
         &__links {
             display: flex;
             gap: 1.5em;
+            // color: $primary; 
 
             &-linkSpan {
                 color: $primary;
@@ -126,6 +144,7 @@ a {
 
         &--link {
             font-weight: 600;
+            color: $text; 
         }
     }
 }
@@ -171,25 +190,30 @@ a {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background: linear-gradient(90deg, $text calc(50% + (100vw - 100%)), $secondary 50%);
+    // background: linear-gradient(90deg, $text calc(50% + (100vw - 100%)), $secondary 50%);
+    background: $secondary;     
 
     .header {
-        writing-mode: vertical-lr;
+        // writing-mode: vertical-lr;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         text-align: center;
-        transform: rotate(180deg);
-        height: 100vh;
+        transform: rotate(0deg);
+        // height: 100vh;
         font-family: 'Space Mono', monospace;
         font-weight: 700;
-        font-size: calc(1.5em + 6vmin);
-        position: absolute;
-        top: 0;
-        left: 0;
-        color: $secondary;
+        font-size: calc(1.5em + 3vmin);
+        // position: absolute;
+        // top: 0;
+        // left: 0;
+        color: $text;
 
         &__tag {
             font-size: calc(0.01em + 2.2vmin);
             font-family: 'Roboto Mono', monospace;
-            font-weight: 200;
+            font-weight: 100;
+            display: none;
             font-style: italic;
         }
     }
@@ -238,7 +262,7 @@ a {
 
 
         &__pic {
-            width: 48vmin;
+            width: 35vmin;
             height: fit-content;
             background: lighten($secondary, 20);
             padding: 5vmin;
@@ -255,26 +279,34 @@ a {
         position: absolute;
         text-align: center;
         bottom: 2em;
-        left: 50%;
-        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1vmin;
+
+        // left: 50%;
+        // transform: translateX(-50%);
 
         .secHeader {
             font-family: "Space Mono", monospace;
             font-size: calc(1em + 1.6vmin);
-            background: linear-gradient(90deg, $secondary 50%, $text 50%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: darken($text, 10);
+            // background: linear-gradient(90deg, $secondary 50%, $text 50%);
+            // background-clip: text;
+            // -webkit-background-clip: text;
+            // -webkit-text-fill-color: transparent;
         }
 
         .name {
-            padding: 0.3em 0 0 0;
-            background: linear-gradient(90deg, $secondary 50%, $text 50%);
+            padding: 0 0 0 0;
+            // background: linear-gradient(90deg, $secondary 50%, $text 50%);
             font-size: calc(1em + 0.8vmin);
             font-weight: normal;
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: $text;
+            color: darken($text, 30)
+            // background-clip: text;
+            // -webkit-background-clip: text;
+            // -webkit-text-fill-color: transparent;
         }
 
     }
@@ -311,11 +343,11 @@ a {
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    padding: 0 0 10vh 0;
+    padding: 0 0 0 0;
 
 
     &__header {
-        padding: calc(4em + 1.5vmin) 0 15vh 0;
+        padding: calc(4em + 1.5vmin) 0 10vmin 0;
 
     }
 
@@ -347,9 +379,6 @@ a {
 
         
     }
-
-
-
 
 }
 
@@ -491,8 +520,8 @@ a {
         .slideCard {
             // flex: 0 0;
             position: relative;
-            $color: $secondary;
-            background: $text;
+            // $color: $secondary;
+            background: darken($text, 10);
             width: 45vmin;
             height: calc(45vmin + 1em);
             padding: 0 1em 1em 1em;
@@ -501,6 +530,13 @@ a {
             flex-direction: column;
             // align-items: space-between;
             justify-content: space-between;
+
+            .slideLights{
+                span{
+                    width: 1.2vmin;
+                    height: 1.2vmin;
+                }
+            }
 
              &::after {
             content: "";
@@ -511,7 +547,7 @@ a {
             width: 100%;
             height: 5vh;
             transform: translateY(-2px);
-            background: $text;
+            background: darken($text, 10);
         }
 
 
@@ -522,6 +558,14 @@ a {
                 right: 1em;
                 z-index: 2;
                 transform: translateY(-50%);
+
+                &-icon{
+                    color: $secondary;
+
+                    &:hover{
+                        color: $primary;
+                    }
+                }
             }
 
             &__top{
@@ -533,6 +577,7 @@ a {
                     padding: 0.5em 0 0.5em 0;
                 }
             }
+        
 
             &__lang{
                 font-weight: 100;

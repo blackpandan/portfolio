@@ -5,6 +5,20 @@
   font-family: "Roboto Mono", monospace;
 }
 
+.button {
+  width: fit-content;
+  padding: 0.5em 6vmin 0.5em 6vmin;
+  border-radius: 1em;
+  border: none;
+  background: #EB0296;
+  color: #f7f4f3;
+  font-size: calc(0.6em + 1vmin);
+}
+.button:hover {
+  background: #f7f4f3;
+  color: #EB0296;
+}
+
 body {
   width: min(100%, 100vw);
   height: 100vh;
@@ -47,7 +61,6 @@ a {
   width: min(100%, 100vw);
   padding: 1em 5vmin 1em 5vmin;
   color: #311847;
-  background: linear-gradient(90deg, #f7f4f3 50%, #311847 50%);
   z-index: 99;
 }
 .head .nav {
@@ -87,6 +100,7 @@ a {
 }
 .head .nav--link {
   font-weight: 600;
+  color: #f7f4f3;
 }
 
 .headerText {
@@ -122,25 +136,24 @@ a {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background: linear-gradient(90deg, #f7f4f3 calc(50% + 100vw - 100%), #311847 50%);
+  background: #311847;
 }
 .home .header {
-  writing-mode: vertical-lr;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  transform: rotate(180deg);
-  height: 100vh;
+  transform: rotate(0deg);
   font-family: "Space Mono", monospace;
   font-weight: 700;
-  font-size: calc(1.5em + 6vmin);
-  position: absolute;
-  top: 0;
-  left: 0;
-  color: #311847;
+  font-size: calc(1.5em + 3vmin);
+  color: #f7f4f3;
 }
 .home .header__tag {
   font-size: calc(0.01em + 2.2vmin);
   font-family: "Roboto Mono", monospace;
-  font-weight: 200;
+  font-weight: 100;
+  display: none;
   font-style: italic;
 }
 .home .me {
@@ -164,7 +177,7 @@ a {
   z-index: 0;
 }
 .home .me__pic {
-  width: 48vmin;
+  width: 35vmin;
   height: fit-content;
   background: #663293;
   padding: 5vmin;
@@ -176,25 +189,22 @@ a {
   position: absolute;
   text-align: center;
   bottom: 2em;
-  left: 50%;
-  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1vmin;
 }
 .home .bottom .secHeader {
   font-family: "Space Mono", monospace;
   font-size: calc(1em + 1.6vmin);
-  background: linear-gradient(90deg, #311847 50%, #f7f4f3 50%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #e3d8d4;
 }
 .home .bottom .name {
-  padding: 0.3em 0 0 0;
-  background: linear-gradient(90deg, #311847 50%, #f7f4f3 50%);
+  padding: 0 0 0 0;
   font-size: calc(1em + 0.8vmin);
   font-weight: normal;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #f7f4f3;
+  color: #baa097;
 }
 .home .scroll {
   font-family: "Roboto Mono", monospace;
@@ -221,10 +231,10 @@ a {
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  padding: 0 0 10vh 0;
+  padding: 0 0 0 0;
 }
 .about__header {
-  padding: calc(4em + 1.5vmin) 0 15vh 0;
+  padding: calc(4em + 1.5vmin) 0 10vmin 0;
 }
 .about__contentBox {
   position: relative;
@@ -362,7 +372,7 @@ a {
 }
 .works .slideWorks .slideCard {
   position: relative;
-  background: #f7f4f3;
+  background: #e3d8d4;
   width: 45vmin;
   height: calc(45vmin + 1em);
   padding: 0 1em 1em 1em;
@@ -370,6 +380,10 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+.works .slideWorks .slideCard .slideLights span {
+  width: 1.2vmin;
+  height: 1.2vmin;
 }
 .works .slideWorks .slideCard::after {
   content: "";
@@ -380,7 +394,7 @@ a {
   width: 100%;
   height: 5vh;
   transform: translateY(-2px);
-  background: #f7f4f3;
+  background: #e3d8d4;
 }
 .works .slideWorks .slideCard__topLinks {
   font-size: calc(0.8em + 1vmin);
@@ -389,6 +403,12 @@ a {
   right: 1em;
   z-index: 2;
   transform: translateY(-50%);
+}
+.works .slideWorks .slideCard__topLinks-icon {
+  color: #311847;
+}
+.works .slideWorks .slideCard__topLinks-icon:hover {
+  color: #EB0296;
 }
 .works .slideWorks .slideCard__top-title {
   font-family: "Space Mono", monospace;
