@@ -474,6 +474,24 @@ a {
             width: 40%;
             transform: translateX(0%);
             color: $text;
+        
+            &-link{
+                color: darken($text, 10);
+                display: flex;
+                gap: 0 0.2em;
+                align-items: center;
+
+                &:hover{
+                    color: $primary;
+                }
+            }
+
+            &-links{
+                text-align: right;
+                display: flex;
+                justify-content: flex-end;
+                gap: 0 1em;
+            }
 
             &-header {
                 font-size: calc(1.5em + 1vmin);

@@ -337,6 +337,21 @@ a {
   transform: translateX(0%);
   color: #f7f4f3;
 }
+.works .workCard__Text-link {
+  color: #e3d8d4;
+  display: flex;
+  gap: 0 0.2em;
+  align-items: center;
+}
+.works .workCard__Text-link:hover {
+  color: #EB0296;
+}
+.works .workCard__Text-links {
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0 1em;
+}
 .works .workCard__Text-header {
   font-size: calc(1.5em + 1vmin);
   padding: 0 0 1em 0;
