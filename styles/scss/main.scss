@@ -8,16 +8,19 @@
 }
 
 .button{
+    display: block;
     width: fit-content;
-    padding: 0.5em 6vmin 0.5em 6vmin;
-    border-radius: 1em;
-    border: none;
-    background: $primary;
-    color: $text;
+    padding: 0.5em 4vmin 0.5em 4vmin;
+    border-radius: 5px;
+    border: 2px solid $primary;
+    // background: $primary;
+    color: $primary;
     font-size: calc(0.6em + 1vmin);
+    font-weight: 700;
+    text-transform: capitalize;
 
     &:hover{
-        background: $text;
+        background: transparentize($primary, 0.85);
         // // outline: 1px solid $text;
         color: $primary;
         // box-shadow: 1px 10px 30px -10px rgb(0, 0, 0);
@@ -95,8 +98,15 @@ a {
     padding: 1em 5vmin 1em 5vmin;
     color: $secondary;
     // background: linear-gradient(90deg, $text 50%, $secondary 50%);
-    // background: 
+    background: transparentize($secondary, 0.1); 
     z-index: 99;
+
+    .hamburger{
+        display: none;
+        color: $primary;
+        font-size: calc(1em + 3.5vmin);
+        cursor: pointer;
+    }
 
     .nav {
         width: 100%;
@@ -133,7 +143,7 @@ a {
         &--resume {
             background: $primary;
             padding: 0.5em 1em 0.5em 1em;
-            border-radius: 1em;
+            border-radius: 5px;
             color: $text;
 
             &:hover {
@@ -197,8 +207,9 @@ a {
         // writing-mode: vertical-lr;
         display: flex;
         align-items: center;
-        justify-content: center;
-        text-align: center;
+        // justify-content: center;
+        gap: 0 0.3em;
+        // text-align: center;
         transform: rotate(0deg);
         // height: 100vh;
         font-family: 'Space Mono', monospace;
@@ -210,11 +221,12 @@ a {
         color: $text;
 
         &__tag {
-            font-size: calc(0.01em + 2.2vmin);
+            font-size: calc(0.1em + 2.2vmin);
             font-family: 'Roboto Mono', monospace;
             font-weight: 100;
-            display: none;
+            // display: none;
             font-style: italic;
+            color: transparentize($primary, 0.35)
         }
     }
 
@@ -231,6 +243,7 @@ a {
         align-items: center;
         justify-content: center;
         width: fit-content;
+        margin: 0 0 12vmin 0 ;
 
         &::before {
             position: absolute;
@@ -282,15 +295,19 @@ a {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 1vmin;
+        gap: 0vmin;
 
         // left: 50%;
         // transform: translateX(-50%);
 
         .secHeader {
-            font-family: "Space Mono", monospace;
+            font-family: "Roboto Mono", monospace;
             font-size: calc(1em + 1.6vmin);
-            color: darken($text, 10);
+            font-weight: 400;
+            color: transparentize($text,0.2);
+            display: flex;
+            align-items: center;
+            gap: 0 0.5em;
             // background: linear-gradient(90deg, $secondary 50%, $text 50%);
             // background-clip: text;
             // -webkit-background-clip: text;
@@ -450,6 +467,14 @@ a {
         padding: 4vmin 0 8vmin 0;
     }
 
+    &__holder{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20vmin;
+        width: 100%;
+    }
+
     .workCard {
         position: relative;
         width: 95%;
@@ -529,10 +554,16 @@ a {
         // flex: 1 0;
         margin: 0vmin 0 0 0;
 
+        &__holder{
+            margin: 30vmin 0 0 0;
+
+        }
+
         &__title{
-            margin: 30vmin 0 15vmin 0;
-            color: $text;
+            margin: 0 0 15vmin 0;
+            color: darken($text, 15);
             font-size: calc(1em + 0.8vmin); 
+            text-align: center;
         }
 
         .slideCard {
@@ -587,6 +618,16 @@ a {
             }
 
             &__top{
+                
+                display: -webkit-box;
+                max-height: calc(1.5em * 10   );
+                // white-space: nowrap;
+                -webkit-line-clamp: 9;
+                line-height: 1.5em;
+                text-overflow: ellipsis;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                
                 &-title{
                     font-family: 'Space Mono', monospace;
                     font-size: calc(1.2em + 0.5vmin);
@@ -594,12 +635,17 @@ a {
                     text-transform: uppercase;
                     padding: 0.5em 0 0.5em 0;
                 }
+                &-description{
+                    // text-align: justify;
+                    font-size: calc(0.5em + 1.5vmin);
+                    padding: 0 0 5vmin 0;
+                }
             }
         
 
             &__lang{
                 font-weight: 100;
-                font-size: 1em;
+                font-size: calc(0.4em + 0.5em);
             }
         }
     }

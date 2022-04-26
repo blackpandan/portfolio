@@ -1,19 +1,31 @@
 @media only screen and (max-width: 786px){
     
     .head{
-        display: none;
+        display: flex;
+        justify-content: flex-end;
+        .hamburger{
+            display: inline;
+        }
         .nav{
             display: none;
         }
     }
 
     .home{
+        .bottom{
+            position: static;
+            margin: 6vmin 0 0 0;
+        }
         .scroll{
             display: none;
+        }
+        .me{
+            margin: 0 0 1em 0 ;
         }
     }
 
     .about{
+        gap: 10vmin;
         &__contentBox{
             // color: blue;
             width: 90vmin;
@@ -22,10 +34,85 @@
         }
     }
 
+    .skills{
+        justify-content: flex-start;
+
+        &__list{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            &-item{
+                // flex: 50%;
+                text-align: center;
+            }
+        }
+    }
+
     .works{
+        padding: 0 1em 0 1em;
         .slideWorks{
             .slideCard{
                 width: 80vmin;
+                height: calc(55vmin + 1em);
+
+                &__top{
+                   
+                }
+            }
+        }
+
+        &__holder{
+            gap: 25vmin;
+        }
+        .workCard{
+            
+
+            &__image{
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                max-height: 100%;
+                width: 100%;
+            }
+
+            &__Text{
+                position: static;
+            box-shadow: 0px 4px 50px -16px black;
+            background-color: transparentize(lighten($secondary, 10), 0.1);
+                top: 0;
+                left: 0;
+                right: 0;
+                width: 100%;
+                padding: 1em 2vmin 1em 2vmin ;
+                
+
+                // &-link{
+                //     text-align: left;
+                //     justify-content: flex-start;
+                // }
+                &-header{
+                    text-align: left;
+                    justify-content: flex-start;
+                    padding-left: 2vmin;
+                }
+                &-stack{
+                    text-align: left;
+                    justify-content: flex-start;
+                    padding-left: 2vmin;
+                }
+                &-description{
+                    text-align: left;
+                    justify-content: flex-start;
+                    padding-left: 2vmin;
+                    box-shadow: none;
+                    background-color: transparent;
+                }
+                &-links{
+                    text-align: left;
+                    justify-content: flex-start;
+                    padding-left: 2vmin;
+                }
             }
         }
     }
