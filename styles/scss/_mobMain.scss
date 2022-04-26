@@ -1,5 +1,17 @@
 @media only screen and (max-width: 786px){
     
+
+    
+    .button{
+
+            &--resume{
+                padding: 0.7em 10vmin 0.7em 10vmin;
+                font-size: calc(1em + 1vmin);
+                margin: 10vmin 0 0 0;
+            }
+        
+    }
+    
     .head{
         display: flex;
         justify-content: flex-end;
@@ -8,6 +20,26 @@
         }
         .nav{
             display: none;
+
+            &__links{
+                flex-direction: column;
+                gap: 10vmin;
+
+                &-linkSpan{
+                    font-size: calc(0.5em + 1vmin);
+                }
+            }
+
+            &--link{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.2em;
+
+               
+            }
+
         }
     }
 
@@ -15,6 +47,7 @@
         .bottom{
             position: static;
             margin: 6vmin 0 0 0;
+
         }
         .scroll{
             display: none;
@@ -35,12 +68,16 @@
     }
 
     .skills{
+        padding-top: 15vmin;
         justify-content: flex-start;
+
 
         &__list{
             display: grid;
             grid-template-columns: 1fr 1fr;
             align-items: center;
+            justify-content: center;
+            gap: 10vmin 20vmin;
             &-item{
                 // flex: 50%;
                 text-align: center;
@@ -50,19 +87,12 @@
 
     .works{
         padding: 0 1em 0 1em;
-        .slideWorks{
-            .slideCard{
-                width: 80vmin;
-                height: calc(55vmin + 1em);
-
-                &__top{
-                   
-                }
-            }
-        }
+       
 
         &__holder{
-            gap: 25vmin;
+            gap: 15vmin;
+            justify-content: center;
+            padding: 0 calc(2px + 2vmin) 0 0;
         }
         .workCard{
             
@@ -77,12 +107,9 @@
             }
 
             &__Text{
-                position: static;
+                position: relative;
             box-shadow: 0px 4px 50px -16px black;
             background-color: transparentize(lighten($secondary, 10), 0.1);
-                top: 0;
-                left: 0;
-                right: 0;
                 width: 100%;
                 padding: 1em 2vmin 1em 2vmin ;
                 
@@ -117,8 +144,42 @@
         }
     }
 
+    .notableWorks{
+        // padding: 0 0 0 0;
+        padding-top: 17vmin;
+      
+         .slideWorks{
+             padding: 0 0 0 0;
+             flex-direction: column;
+             align-items: center;
+             gap: 20vmin 0;
+            .slideCard{
+               
+                width: 80vmin;
+                height: calc(75vmin + 1em);
+                padding: 0 1em 1em 1em;
+
+                &__top{
+                     display: -webkit-box;
+                max-height: calc(1.5em * 10   );
+                // white-space: nowrap;
+                -webkit-line-clamp: 9;
+                line-height: 1.5em;
+                text-overflow: ellipsis;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                }
+            }
+
+            &__holder{
+                padding: 0 0 0 0;
+            }
+        }
+    }
+
 
     .contact{
+        padding: 0 0 0 0 ;
         &__form{
             width: 55vmin;
         }

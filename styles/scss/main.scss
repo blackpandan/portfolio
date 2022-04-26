@@ -15,7 +15,7 @@
     border: 2px solid $primary;
     // background: $primary;
     color: $primary;
-    font-size: calc(0.6em + 1vmin);
+    font-size: calc(0.7em + 1vmin);
     font-weight: 700;
     text-transform: capitalize;
 
@@ -70,6 +70,7 @@ a {
     overflow-x: hidden;
 
     &::-webkit-scrollbar {
+        width: calc(2px + 2vmin);
         background: $secondary;
     }
 
@@ -83,7 +84,7 @@ a {
     section {
         position: relative;
         width: 100vw;
-        padding-right: calc(100vw - 100%);
+        margin-right: calc(2vmin + 2px);
         min-height: 100vh;
         scroll-snap-align: start;
 
@@ -91,6 +92,8 @@ a {
 
 
 }
+
+
 
 .head {
     position: fixed;
@@ -103,9 +106,48 @@ a {
 
     .hamburger{
         display: none;
+        z-index: 2;
         color: $primary;
         font-size: calc(1em + 3.5vmin);
         cursor: pointer;
+    }
+
+    .mobNav{
+        width: 100vw;
+        height: 100vh;
+        overflow-y: scroll;
+        position: absolute;
+        top: 0;
+        // left: 0;
+        right: 0;
+        bottom: 0;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: $secondary;
+        padding: 0 0 2em 0;
+        transition: opacity 4s;
+
+            &::-webkit-scrollbar {
+        width: calc(2px + 2vmin);
+        background: $secondary;
+    }
+
+
+   
+
+    &::-webkit-scrollbar-thumb {
+        background: $primary;
+        border-radius: 1em;
+    }
+
+
+        &__header{
+            color: $text;
+            padding: 15vmin 0 20vmin 0;
+            font-family: "Space Mono", monospace;
+            // text-decoration: underline wavy $primary;
+        }
     }
 
     .nav {
@@ -155,6 +197,9 @@ a {
         &--link {
             font-weight: 600;
             color: $text; 
+             &:hover{
+                    text-decoration: underline wavy $primary;
+                }
         }
     }
 }
@@ -307,7 +352,8 @@ a {
             color: transparentize($text,0.2);
             display: flex;
             align-items: center;
-            gap: 0 0.5em;
+            justify-content: center;
+            gap: 0 1vmin;
             // background: linear-gradient(90deg, $secondary 50%, $text 50%);
             // background-clip: text;
             // -webkit-background-clip: text;
@@ -401,7 +447,7 @@ a {
 
 .skills {
     margin: 0 0 20vmin 0;
-    padding: 10vmin 5vmin 0 5vmin;
+    padding: 10vmin 15vmin 0 15vmin;
     background-color: $secondary;
     display: flex;
     align-items: center;
@@ -410,6 +456,12 @@ a {
 
     &__header {
         color: $text;
+    }
+
+    &__holder{
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     &__list {
@@ -457,14 +509,15 @@ a {
 }
 
 .works {
-    padding: 10vmin 0 10vmin calc(100vw - 100%);
-    width: 100%;
+    // margin: 30vmin 0 0 0;
+    padding: 0 0 10vmin 0;
+    width: 100%;;
     display: flex;
     flex-direction: column;
     align-items: center;
 
     &__header {
-        padding: 4vmin 0 8vmin 0;
+        padding: 15vmin 0 8vmin 0;
     }
 
     &__holder{
@@ -479,7 +532,7 @@ a {
         position: relative;
         width: 95%;
         // background-color: blue;
-        height: 60vmin;
+        // height: 60vmin;
 
 
 
@@ -544,7 +597,14 @@ a {
         }
     }
 
-    .slideWorks {
+   
+}
+
+.notableWorks{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+     .slideWorks {
         display: flex;
         flex-flow: row wrap;
         justify-content: center;
@@ -555,12 +615,12 @@ a {
         margin: 0vmin 0 0 0;
 
         &__holder{
-            margin: 30vmin 0 0 0;
+            padding: 15vmin 0 0 0;
 
         }
 
         &__title{
-            margin: 0 0 15vmin 0;
+            margin: 0 0 20vmin 0;
             color: darken($text, 15);
             font-size: calc(1em + 0.8vmin); 
             text-align: center;
@@ -711,7 +771,6 @@ a {
 //     transform: rotate(10deg);
 //     transform-origin: center;
 // }
-
 
 
 @import '_mobMain.scss';

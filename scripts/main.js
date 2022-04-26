@@ -1,5 +1,22 @@
 // gsap.registerPlugin(ScrollTrigger)
 
+
+window.onresize = () => {
+    console.log(window.innerWidth);
+
+    if(window.innerWidth > 786) nav.style.display = "" ;
+}
+
+let nav = document.getElementById("mobNav");
+
+function handleNav() {
+    // nav.style.display = "flex";
+    console.log(nav.style)
+    nav.style.display != "" && nav.style.display !="none" ? nav.style.display = "" : nav.style.display = "flex";
+    console.log(nav.style.display)
+    console.log("open")
+}
+
 // gsap.from("#me", {duration: 0.5, y: 70, opacity: 0.4})
 // gsap.from("#header", {duration: 0.5, y: 70, opacity: 0.4})
 // gsap.from("#full", {duration:  0.5, x: 70, opacity: 0, delay:  0.5})
