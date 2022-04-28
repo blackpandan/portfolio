@@ -537,6 +537,7 @@ a {
 
 
         &__image {
+            
             object-fit: cover;
             // object-position: 0% 10%;
             // width: 60%;
@@ -762,6 +763,17 @@ a {
                 outline-color: $primary;
                 border: 1px solid $primary;
             }
+        }
+    }
+
+    &__links{
+        // background-color: white;
+        margin: 15vh 0 0 0;
+        display: none;
+
+        a{
+        color: $primary;
+        font-size: calc(1em + 2vmin);
         }
     }
 }
