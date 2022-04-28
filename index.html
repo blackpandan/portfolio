@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles/css/main.css">
     <title>Dev.Fate Professional Web Developer, freelancer and writer</title>
-    <script src="https://kit.fontawesome.com/4c4a079b95.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/ScrollTrigger.min.js"></script>
+    <script src="https://kit.fontawesome.com/4c4a079b95.js" crossorigin="anonymous" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/ScrollTrigger.min.js" defer></script>
     <!-- SEO META TAGS -->
 
     <!-- HTML Meta Tags -->
@@ -44,16 +44,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&family=Space+Mono:wght@400;700&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" defer="true">
 </head>
 
 <body>
     <header class="head" id="head">
-         <!-- FOR MOBILE -->
-         <i class="fa-solid fa-bars hamburger"></i>
+        <!-- FOR MOBILE -->
+        <i class="fa-solid fa-bars hamburger" onClick="handleNav()"></i>
+        <nav class="mobNav" id="mobNav">
+            <h1 class="mobNav__header">Dev.Fate</h1>
+            <ul class="nav__links">
+                <li class="nav__links-linkL" onClick="handleNav()"><a href="#home" class="nav--link"><span
+                            class="nav__links-linkSpan">01.</span>Home</a></li>
+                <li class="nav__links-linkL" onClick="handleNav()"><a href="#about" class="nav--link"><span
+                            class="nav__links-linkSpan">02.</span>About</a></li>
+                <li class="nav__links-linkL" onClick="handleNav()"><a href="#works" class="nav--link"><span
+                            class="nav__links-linkSpan">03.</span>Work</a></li>
+                <li class="nav__icons-l" onClick="handleNav()"><a href="https://dev.to/blackpandan" class="button button--resume">resume</a></li>
+            </ul>
+        </nav>
         <nav class="nav">
-           
-            
+
+
 
 
 
@@ -218,12 +230,12 @@
 
             </div>
             <div class="bottom">
-                 <h1 class="header" id="header"><span class="header__tag" id="devFate"> &lt;h1&gt; </span>Dev.Fate<span
-                    class="header__tag" id="devFate2"> &lt;/h1&gt;</span></h1>
+                <h1 class="header" id="header"><span class="header__tag" id="devFate"> &lt;h1&gt; </span>Dev.Fate<span
+                        class="header__tag" id="devFate2"> &lt;/h1&gt;</span></h1>
                 <h1 class="secHeader" id="full"><span class="header__tag"> &lt;h2&gt; </span>fullstack web
                     developer<span class="header__tag"> &lt;/h2&gt;</span></h1>
-                    <br>
-                    <a href="#works" class="button">works</a>
+                <br>
+                <a href="#works" class="button">works</a>
                 <!-- <p class="name" id="name"><span class="header__tag"> &lt;p&gt; </span>James Faith<span
                         class="header__tag"> &lt;/p&gt;</span></p> -->
             </div>
@@ -231,6 +243,7 @@
                     class="scrollSpan">&lt;p&gt;</span></p>
             <div class="deco"></div>
         </section>
+
         <section class="about" id="about">
             <h2 class="about__header headerText" id="aboutHeader"><span class="headerText__order">02.</span>About</h2>
             <div class="about__contentBox" id="contentBox">
@@ -245,6 +258,7 @@
             </div>
 
         </section>
+
         <section class="skills" id="skills">
             <h3 class="skills__header headerText"><span class="headerText__order">03.</span>Skills</h3>
             <ul class="skills__list">
@@ -264,58 +278,39 @@
                         class="logoImage__text">Wordpress</span></li>
             </ul>
         </section>
+
         <section class="works" id="works">
             <h2 class="works__header headerText" id="workHeader"><span class="headerText__order">04.</span>Works</h2>
-        <div class="works__holder">
-            <div class="workCard">
-                <div class="workCard__imageContainer">
-                    <img class="workCard__image" src="assets/pics/skar.jpg" alt="">
-                </div>
-                <div class="workCard__Text">
-                    <p class="workCard__Text-header">Skar Strokes</p>
-                    <p class="workCard__Text-description">
-                        an artist portfolio to display his digital works and
-                        also provide personal information with contact.
-                        It was created using html, scss for the styling and vue.js to handle the information and states
-                    </p>
-                    <p class="workCard__Text-stack">
-                        <span>Vue</span>
-                        <span>Nuxt</span>
-                        <span>Scss</span>
-                    </p>
-                    <div class="workCard__Text-links">
-                        <a href="https://github.com/blackpandan/skar_portfolio" class="workCard__Text-link"><i class="fa-solid fa-eye"></i>live</a>
-                        <a href="https://skarstrokes.com" class="workCard__Text-link"><i class="fa-brands fa-github"></i>code</a>
+            <div class="works__holder">
+                <div class="workCard">
+                    <div class="workCard__imageContainer">
+                        <img class="workCard__image" src="assets/pics/skar.webp" alt="">
+                    </div>
+                    <div class="workCard__Text">
+                        <p class="workCard__Text-header">Skar Strokes</p>
+                        <p class="workCard__Text-description">
+                            an artist portfolio to display his digital works and
+                            also provide personal information with contact.
+                            It was created using html, scss for the styling and vue.js to handle the information and
+                            states
+                        </p>
+                        <p class="workCard__Text-stack">
+                            <span>Vue</span>
+                            <span>Nuxt</span>
+                            <span>Scss</span>
+                        </p>
+                        <div class="workCard__Text-links">
+                            <a href="https://github.com/blackpandan/skar_portfolio" class="workCard__Text-link"><i
+                                    class="fa-solid fa-eye"></i>live</a>
+                            <a href="https://skarstrokes.com" class="workCard__Text-link"><i
+                                    class="fa-brands fa-github"></i>code</a>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-             <div class="workCard">
-                <div class="workCard__imageContainer">
-                    <img class="workCard__image" src="assets/pics/skar.jpg" alt="">
-                </div>
-                <div class="workCard__Text">
-                    <p class="workCard__Text-header">Skar Strokes</p>
-                    <p class="workCard__Text-description">
-                        an artist portfolio to display his digital works and
-                        also provide personal information with contact.
-                        It was created using html, scss for the styling and vue.js to handle the information and states
-                    </p>
-                    <p class="workCard__Text-stack">
-                        <span>Vue</span>
-                        <span>Nuxt</span>
-                        <span>Scss</span>
-                    </p>
-                    <div class="workCard__Text-links">
-                        <a href="https://github.com/blackpandan/skar_portfolio" class="workCard__Text-link"><i class="fa-solid fa-eye"></i>live</a>
-                        <a href="https://skarstrokes.com" class="workCard__Text-link"><i class="fa-brands fa-github"></i>code</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-            
+        <section class="notableWorks">
             <div class="slideWorks__holder">
                 <p class="slideWorks__title">Other Notable Works</p>
                 <div class="slideWorks">
@@ -327,13 +322,15 @@
                         </div>
                         <div class="slideCard__topLinks">
                             <!-- <a href="https://github.com/blackpandan/lifenote-api" class="slideCard__topLinks-icon"><i class="fa-solid fa-eye" ></i></a> -->
-                            <a href="https://github.com/blackpandan/lifenote-api" class="slideCard__topLinks-icon"><i class="fa-brands fa-github"></i></a>
+                            <a href="https://github.com/blackpandan/lifenote-api" class="slideCard__topLinks-icon"><i
+                                    class="fa-brands fa-github"></i>code</a>
                         </div>
                         <div class="slideCard__top">
                             <p class="slideCard__top-title">LIFENOTE API</p>
-                            <p class="slideCard__top-description">this API is made to handle processes for a typical project planner, it includes endpoints for:
-                creating, deleting and updating projects and todos,
-                it also include authentication, creation and modifications of Users</p>
+                            <p class="slideCard__top-description">this API is made to handle processes for a typical
+                                project planner, it includes endpoints for:
+                                creating, deleting and updating projects and todos,
+                                it also include authentication, creation and modifications of Users</p>
                         </div>
                         <p class="slideCard__lang">
                             <span>python</span>
@@ -349,11 +346,13 @@
                         </div>
                         <div class="slideCard__topLinks">
                             <!-- <a href="https://github.com/blackpandan/lifenote-api" class="slideCard__topLinks-icon"><i class="fa-solid fa-eye" ></i></a> -->
-                            <a href="https://github.com/blackpandan/lifenote-api" class="slideCard__topLinks-icon"><i class="fa-brands fa-github"></i></a>
+                            <a href="https://github.com/blackpandan/lifenote-api" class="slideCard__topLinks-icon"><i
+                                    class="fa-brands fa-github"></i>code</a>
                         </div>
                         <div class="slideCard__top">
                             <p class="slideCard__top-title">BISMID API</p>
-                            <p class="slideCard__top-description">this API is made to handle processes for a typical ecommerce Website, it includes endpoint for:
+                            <p class="slideCard__top-description">this API is made to handle processes for a typical
+                                ecommerce Website, it includes endpoint for:
                                 creating, deleting and updating Products
                                 it also include authentication, creation and modifications of Users
                                 with endpoint for returning product added for specific users</p>
@@ -364,12 +363,15 @@
                             <span>drf</span>
                         </p>
                     </div>
-                    
-            </div>
+
+                </div>
             </div>
         </section>
+
+
         <section class="contact" id="contact">
-            <h2 class="contact__header headerText" id="contactHeader"><span class="headerText__order">02.</span>Contact</h2>
+            <h2 class="contact__header headerText" id="contactHeader"><span class="headerText__order">02.</span>Contact
+            </h2>
             <div class="contact__top">
                 <p class="contact__top-msg">HI LET'S CHAT</p>
                 <p class="contact__top-subMsg">DONT'T BE SHY</p>
@@ -380,6 +382,21 @@
                 <textarea name="message" class="input" id="message" placeholder="Message" rows="4"></textarea>
                 <input type="submit" value="Send" class="input input--submit">
             </form>
+
+            <p class="contact__links">
+                <a href="https://github.com/blackpandan">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/faith-james-354180188">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="https://twitter.com/devfate_j">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+                <a href="https://blog.devfate.com">
+                    <i class="fa-brands fa-hashnode"></i>
+                </a>
+            </p>
         </section>
     </div>
 

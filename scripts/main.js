@@ -1,4 +1,19 @@
-// gsap.registerPlugin(ScrollTrigger)
+let nav = document.getElementById("mobNav");
+//gsap.registerPlugin(ScrollTrigger)
+
+
+window.onresize = () => {
+    console.log(window.innerWidth);
+
+    if(window.innerWidth > 786) nav.style.display = "" ;
+}
+
+
+
+function handleNav() {
+    // nav.style.display = "flex";
+    nav.style.display != "" && nav.style.display !="none" ? nav.style.display = "" : nav.style.display = "flex";
+}
 
 // gsap.from("#me", {duration: 0.5, y: 70, opacity: 0.4})
 // gsap.from("#header", {duration: 0.5, y: 70, opacity: 0.4})
