@@ -1,4 +1,5 @@
 let nav = document.getElementById("mobNav");
+let loader = document.getElementById("loader");
 //gsap.registerPlugin(ScrollTrigger)
 
 
@@ -6,7 +7,14 @@ window.onresize = () => {
     console.log(window.innerWidth);
 
     if(window.innerWidth > 786) nav.style.display = "" ;
-}
+};
+
+window.onload = () => {
+    setTimeout(()=>{
+        loader.parentNode.removeChild(loader);
+        console.log("loader finished");
+    }, 3000);
+};
 
 
 
