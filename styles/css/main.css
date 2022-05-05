@@ -753,7 +753,6 @@ a {
 
 .dev {
   animation: fill-anim 3s ease forwards 2s;
-  width: 60vmin;
 }
 
 .dev path:nth-child(1) {
