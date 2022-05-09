@@ -1,4 +1,8 @@
 var form = document.getElementById("contactForm");
+
+function removeStatus(stat){
+    stat.parentNode.removeChild(stat);
+};
     
     async function handleSubmit(event) {
       event.preventDefault();
@@ -16,7 +20,8 @@ var form = document.getElementById("contactForm");
           status.innerHTML = "Message Sent Sucessfully";
           status.style.display = "block";
           status.classList.toggle("contact__status--success");
-          form.reset()
+          form.reset();
+          setTimeout(()=>{removeStatus(status)}, 7000);
         } else {
             console.log(response)
           response.json().then(data => {
@@ -27,6 +32,7 @@ var form = document.getElementById("contactForm");
             } else {
               status.innerHTML = "Oops! There was a problem sending the message"
             }
+          setTimeout(()=>{removeStatus(status)}, 7000);
           })
         }
       }).catch(error => {
@@ -34,6 +40,7 @@ var form = document.getElementById("contactForm");
         status.style.display = "block";
         status.classList.toggle("contact__status--error");
         status.innerHTML = "Oops! There was a problem sending the message"
+          setTimeout(()=>{removeStatus(status)}, 7000);
       });
     }
     form.addEventListener("submit", handleSubmit)
