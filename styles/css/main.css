@@ -573,6 +573,10 @@ a {
 .contact__form .input--submit {
   background-color: #EB0296;
   padding: 0.5em 0 0.5em 0;
+  cursor: pointer;
+}
+.contact__form .input--submit:hover {
+  background-color: rgba(235, 2, 150, 0.3);
 }
 .contact__form .input::placeholder {
   font-size: calc(0.8em + 0.7vmin);

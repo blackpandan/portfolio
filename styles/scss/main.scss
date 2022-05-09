@@ -773,6 +773,12 @@ a {
             &--submit{
                 background-color: $primary;
                 padding: 0.5em 0 0.5em 0;
+                cursor: pointer;
+
+                &:hover{
+                    background-color: transparentize($primary, 0.7);
+                    
+                }
             }
 
             &::placeholder{
