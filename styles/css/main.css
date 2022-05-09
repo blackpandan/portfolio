@@ -342,7 +342,7 @@ a {
   align-items: center;
 }
 .skills__list {
-  margin: 15vmin 0 0 0;
+  margin: 10vmin 0 0 0;
   display: flex;
   width: 100%;
   flex-flow: row wrap;
@@ -531,7 +531,7 @@ a {
   text-transform: lowercase;
 }
 .notableWorks .slideWorks .slideCard__lang {
-  font-weight: 100;
+  font-weight: 200;
   font-size: 0.9em;
 }
 
@@ -588,6 +588,16 @@ a {
 .contact__links a {
   color: #EB0296;
   font-size: calc(1em + 2vmin);
+}
+.contact__status {
+  display: none;
+  font-size: 1.2em;
+}
+.contact__status--success {
+  color: #00e600;
+}
+.contact__status--error {
+  color: #ff6666;
 }
 
 @media only screen and (max-width: 786px) {

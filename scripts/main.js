@@ -23,6 +23,34 @@ function handleNav() {
     nav.style.display != "" && nav.style.display !="none" ? nav.style.display = "" : nav.style.display = "flex";
 }
 
+
+// ANIMATIONS
+
+gsap.from(["#head", "#me"], {delay: 3, duration: 1.2,opacity: 0, y: -150})
+gsap.from(["#header", "#full", "#buttonWorks"], {delay: 3, duration: 1.2,opacity: 0, y: 150})
+
+
+
+setTimeout(()=>{VANTA.BIRDS({
+  el: "#body",
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  scale: 1.00,
+  scaleMobile: 1.00,
+  backgroundColor: 0x311847,
+  color1: 0xff00d4,
+  color2: 0xff0096,
+  birdSize: 0.30,
+  wingSpan: 3.00,
+  speedLimit: 2.00,
+  separation: 84.00,
+  alignment: 92.00,
+  cohesion: 55.00
+})}, 3000)
+
 // gsap.from("#me", {duration: 0.5, y: 70, opacity: 0.4})
 // gsap.from("#header", {duration: 0.5, y: 70, opacity: 0.4})
 // gsap.from("#full", {duration:  0.5, x: 70, opacity: 0, delay:  0.5})

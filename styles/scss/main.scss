@@ -482,7 +482,7 @@ a {
     }
 
     &__list {
-        margin: 15vmin 0 0 0;
+        margin: 10vmin 0 0 0;
         display: flex;
         width: 100%;
         flex-flow: row wrap;
@@ -724,7 +724,7 @@ a {
         
 
             &__lang{
-                font-weight: 100;
+                font-weight: 200;
                 font-size: calc(0.4em + 0.5em);
             }
         }
@@ -738,6 +738,7 @@ a {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    // overflow-y: scroll;
 
     &__top{
         padding: 8vmin 0 6vmin 0;
@@ -793,6 +794,20 @@ a {
         a{
         color: $primary;
         font-size: calc(1em + 2vmin);
+        }
+    }
+
+    &__status{
+        display: none;
+        font-size: 1.2em;
+
+        &--success{
+
+            color: lighten(green, 20);
+        }
+
+        &--error{
+            color: lighten(red, 20)
         }
     }
 }
