@@ -763,8 +763,8 @@ a {
         width: 40vmin;
 
         .input{
-            padding: 0.5em 0 0.5em 1.5em;
-            font-size: calc(0.8em + 0.7vmin);
+            padding: 0.7em 1.5em 0.7em 1.5em;
+            font-size: calc(0.8em + 0.5vmin);
             background: none;
             border: 1px solid $primary;
             color: $text;
@@ -776,6 +776,7 @@ a {
             }
 
             &::placeholder{
+            font-size: calc(0.8em + 0.7vmin);
                 color: $primary;
             }
 
