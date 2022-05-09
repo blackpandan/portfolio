@@ -18,6 +18,7 @@ var form = document.getElementById("contactForm");
           status.classList.toggle("contact__status--success");
           form.reset()
         } else {
+            console.log(response)
           response.json().then(data => {
             status.style.display = "block";
             status.classList.toggle("contact__status--error");
@@ -29,6 +30,7 @@ var form = document.getElementById("contactForm");
           })
         }
       }).catch(error => {
+          console.log(error);
         status.style.display = "block";
         status.classList.toggle("contact__status--error");
         status.innerHTML = "Oops! There was a problem sending the message"
